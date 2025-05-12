@@ -48,9 +48,12 @@ class MyIterableWithIterator {
     
     [Symbol.iterator]() {
         // Return an iterator object with a bound next method
-        return {
-            next: this.next.bind(this)
-        };
+        // return {
+        //     next: this.next.bind(this)
+        // };
+
+        // or just the object itself because it has the next method defined
+        return this;
     }
 
     next() {
